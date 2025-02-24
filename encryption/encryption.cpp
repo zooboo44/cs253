@@ -41,7 +41,7 @@ vector<char> decode(vector<int> encoded) {
 vector<int> encrypt(const vector<int>& asciiVector, int key) {
     vector<int> encrypted;
     for (int value : asciiVector) {
-        encrypted.push_back(value + key);
+        encrypted.push_back(value ^ key);
     }
     return encrypted;
 }
@@ -63,7 +63,7 @@ vector<int> decrypt(string filePath, int key) {
 
     vector<int> decrypted;
     for (int value : encrypted) {
-        decrypted.push_back(value - newKey);
+        decrypted.push_back(value ^ newKey);
     }
     return decrypted;
 }
