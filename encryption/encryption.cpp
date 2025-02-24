@@ -118,6 +118,8 @@ int main()
         newKey = getNewKey(key, asciiVector);
         encrypted = encrypt(asciiVector, newKey);
         writeEncodedToFile(encrypted, encryptedFileName);
+        cout << "File has been encrypted!" << endl;
+        return 0;
     }
     if (input == "2") {
         cout << "Enter encrypted filename to decrypt: ";
@@ -129,6 +131,8 @@ int main()
         decryptedVector = decrypt(encryptedFileName, key);
         decodedVector = decode(decryptedVector);
         writeDecodedToFile(decodedVector, decryptedFileName);
+        cout << "File has been decrypted!" << endl;
+        return 1;
     }
     if (input == "exit") {
         cout << "goodbye" << endl;
